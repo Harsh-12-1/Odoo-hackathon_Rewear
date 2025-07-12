@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ReWear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">ReWear</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse</a>
+            <a href="list-item.html">List Item</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="settings.html">Settings</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <!-- User Profile Section -->
+        <div class="profile-section">
+            <div class="profile-header">
+                <img src="https://via.placeholder.com/100" alt="Profile" class="large-profile-pic">
+                <div class="profile-info">
+                    <h2 id="userName">User Name</h2>
+                    <p class="points">Points: <span id="userPoints">500</span></p>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Listed Items</h3>
+                    <p id="listedItems">12</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3>Completed Swaps</h3>
+                    <p id="completedSwaps">8</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-star"></i>
+                    <h3>Rating</h3>
+                    <p id="userRating">4.5/5</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Score</h3>
+                    <p id="communityScore">85%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Listings Section -->
+        <section class="dashboard-section">
+            <div class="section-header">
+                <h2>My Listings</h2>
+                <a href="list-item.html" class="add-item-btn"><i class="fas fa-plus"></i> Add New Item</a>
+            </div>
+            <div class="items-grid" id="myListings">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- My Purchases Section -->
+        <section class="dashboard-section">
+            <div class="section-header">
+                <h2>My Purchases</h2>
+                <select class="filter-select">
+                    <option value="all">All Items</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div class="items-grid" id="myPurchases">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Active Swaps Section -->
+        <section class="dashboard-section">
+            <div class="section-header">
+                <h2>Active Swaps</h2>
+            </div>
+            <div class="swaps-container" id="activeSwaps">
+                <!-- Swaps will be populated by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

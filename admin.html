@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - ReWear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Navigation -->
+    <nav class="admin-nav">
+        <div class="logo">ReWear Admin</div>
+        <div class="admin-info">
+            <img src="https://via.placeholder.com/40" alt="Admin" class="admin-pic">
+            <span class="admin-name">Admin</span>
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <ul class="admin-menu">
+                <li class="active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </li>
+                <li data-section="users">
+                    <i class="fas fa-users"></i> Manage Users
+                </li>
+                <li data-section="listings">
+                    <i class="fas fa-tshirt"></i> Manage Listings
+                </li>
+                <li data-section="swaps">
+                    <i class="fas fa-exchange-alt"></i> Manage Swaps
+                </li>
+                <li data-section="reports">
+                    <i class="fas fa-flag"></i> Reports
+                </li>
+                <li data-section="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h1>Dashboard Overview</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Total Users</h3>
+                        <p class="stat-number">1,234</p>
+                        <span class="stat-trend positive">+12% this month</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>Active Listings</h3>
+                        <p class="stat-number">567</p>
+                        <span class="stat-trend positive">+8% this month</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h3>Completed Swaps</h3>
+                        <p class="stat-number">89</p>
+                        <span class="stat-trend positive">+15% this month</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Pending Reviews</h3>
+                        <p class="stat-number">23</p>
+                        <span class="stat-trend negative">5 urgent</span>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list">
+                        <!-- Activity items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Users Section -->
+            <section id="users" class="content-section">
+                <h1>Manage Users</h1>
+                <div class="section-header">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search users...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filters">
+                        <select>
+                            <option value="all">All Users</option>
+                            <option value="active">Active</option>
+                            <option value="suspended">Suspended</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="users-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- User rows will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Listings Section -->
+            <section id="listings" class="content-section">
+                <h1>Manage Listings</h1>
+                <div class="section-header">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search listings...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filters">
+                        <select>
+                            <option value="all">All Listings</option>
+                            <option value="pending">Pending Review</option>
+                            <option value="active">Active</option>
+                            <option value="reported">Reported</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="listings-grid">
+                    <!-- Listing cards will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Swaps Section -->
+            <section id="swaps" class="content-section">
+                <h1>Manage Swaps</h1>
+                <div class="section-header">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search swaps...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filters">
+                        <select>
+                            <option value="all">All Swaps</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                            <option value="disputed">Disputed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="swaps-list">
+                    <!-- Swap items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports" class="content-section">
+                <h1>Reports</h1>
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>User Growth</h3>
+                        <div class="chart-container">
+                            <!-- Chart will be added by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <h3>Swap Statistics</h3>
+                        <div class="chart-container">
+                            <!-- Chart will be added by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <h3>Popular Categories</h3>
+                        <div class="chart-container">
+                            <!-- Chart will be added by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <h3>User Engagement</h3>
+                        <div class="chart-container">
+                            <!-- Chart will be added by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="content-section">
+                <h1>Admin Settings</h1>
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3>General Settings</h3>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Site Name</label>
+                                <input type="text" value="ReWear">
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Email</label>
+                                <input type="email" value="admin@rewear.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Points Exchange Rate</label>
+                                <input type="number" value="100">
+                            </div>
+                            <button type="submit">Save Changes</button>
+                        </form>
+                    </div>
+                    <div class="settings-card">
+                        <h3>Notification Settings</h3>
+                        <form class="settings-form">
+                            <div class="form-group">
+                                <label>Email Notifications</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="emailNotif" checked>
+                                    <label for="emailNotif"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>System Alerts</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="systemAlerts" checked>
+                                    <label for="systemAlerts"></label>
+                                </div>
+                            </div>
+                            <button type="submit">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user || user.role !== 'admin') {
+                window.location.href = user ? 'dashboard.html' : 'login.html';
+            } else {
+                initAdminPanel();
+            }
+        });
+    </script>
+</body>
+</html>

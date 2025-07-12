@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - ReWear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo"><a class="logo-link" href="index.html">ReWear</a></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse</a>
+            <a href="list-item.html">List Item</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="settings.html">Settings</a>
+        </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Content -->
+    <div class="product-container">
+        <!-- Image Gallery Section -->
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="https://via.placeholder.com/600x800" alt="Product Main Image" id="mainImage">
+            </div>
+            <div class="thumbnail-container">
+                <img src="https://via.placeholder.com/150" alt="Thumbnail 1" class="thumbnail active">
+                <img src="https://via.placeholder.com/150" alt="Thumbnail 2" class="thumbnail">
+                <img src="https://via.placeholder.com/150" alt="Thumbnail 3" class="thumbnail">
+                <img src="https://via.placeholder.com/150" alt="Thumbnail 4" class="thumbnail">
+            </div>
+        </div>
+
+        <!-- Product Information Section -->
+        <div class="product-info">
+            <h1 class="product-title">Vintage Denim Jacket</h1>
+            <div class="product-meta">
+                <span class="category">Category: Outerwear</span>
+                <span class="size">Size: M</span>
+                <span class="condition">Condition: Excellent</span>
+            </div>
+
+            <div class="product-description">
+                <h2>Description</h2>
+                <p>Classic vintage denim jacket in excellent condition. Features traditional button closures, two chest pockets, and side pockets. Perfect for casual wear and easily pairs with any outfit.</p>
+            </div>
+
+            <div class="product-tags">
+                <span class="tag">Vintage</span>
+                <span class="tag">Denim</span>
+                <span class="tag">Casual</span>
+                <span class="tag">Unisex</span>
+            </div>
+
+            <div class="uploader-info">
+                <h2>Listed by</h2>
+                <div class="uploader-profile">
+                    <img src="https://via.placeholder.com/50" alt="Uploader" class="uploader-pic">
+                    <div class="uploader-details">
+                        <h3>John Doe</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exchange-options">
+                <h2>Exchange Options</h2>
+                <div class="points-option">
+                    <i class="fas fa-coins"></i>
+                    <span>500 points</span>
+                    <button class="redeem-btn">Redeem with Points</button>
+                </div>
+                <div class="swap-option">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Direct Swap</span>
+                    <button class="swap-btn">Propose Swap</button>
+                </div>
+                <div class="purchase-option">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>₹499</span>
+                    <button class="purchase-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="availability-status available">
+                <i class="fas fa-check-circle"></i>
+                <span>Available for Exchange</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Similar Items Section -->
+    <section class="similar-items">
+        <h2>Similar Items</h2>
+        <div class="items-grid">
+            <!-- Similar items will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Swap Proposal Modal -->
+    <div id="swapModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Propose a Swap</h2>
+            <div class="swap-items-container">
+                <div class="their-item">
+                    <h3>Their Item</h3>
+                    <img src="https://via.placeholder.com/150" alt="Their Item" class="swap-item-img">
+                    <p>Vintage Denim Jacket</p>
+                </div>
+                <i class="fas fa-exchange-alt swap-arrow"></i>
+                <div class="your-items">
+                    <h3>Select Your Item</h3>
+                    <div class="your-items-grid">
+                        <!-- User's items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <div class="swap-message">
+                <label for="swapMessage">Add a message (optional)</label>
+                <textarea id="swapMessage" placeholder="Write a message to the owner..."></textarea>
+            </div>
+            <button class="submit-swap-btn">Send Swap Proposal</button>
+        </div>
+    </div>
+
+    <script src="product.js"></script>
+</body>
+</html>

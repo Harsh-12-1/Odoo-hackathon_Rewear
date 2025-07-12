@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse - ReWear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="browse.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html">ReWear</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Men
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#hoodies">Hoodies</a>
+                    <a href="#shirts">Shirts</a>
+                    <a href="#tshirts">T-Shirts</a>
+                    <a href="#pants">Pants</a>
+                    <a href="#jackets">Jackets</a>
+                    <a href="#sweaters">Sweaters</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Women
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#dresses">Dresses</a>
+                    <a href="#tops">Tops</a>
+                    <a href="#skirts">Skirts</a>
+                    <a href="#pants-women">Pants</a>
+                    <a href="#blouses">Blouses</a>
+                    <a href="#sweaters-women">Sweaters</a>
+                </div>
+            </div>
+            <a href="index.html">Home</a>
+            <a href="browse.html">Browse</a>
+            <a href="list-item.html">List Item</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="settings.html">Settings</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="browse-container">
+        <!-- Filters Section -->
+        <aside class="filters">
+            <h2>Filters</h2>
+            <div class="filter-group">
+                <h3>Size</h3>
+                <label><input type="checkbox" value="xs"> XS</label>
+                <label><input type="checkbox" value="s"> S</label>
+                <label><input type="checkbox" value="m"> M</label>
+                <label><input type="checkbox" value="l"> L</label>
+                <label><input type="checkbox" value="xl"> XL</label>
+            </div>
+            <div class="filter-group">
+                <h3>Condition</h3>
+                <label><input type="checkbox" value="new"> New</label>
+                <label><input type="checkbox" value="like-new"> Like New</label>
+                <label><input type="checkbox" value="good"> Good</label>
+                <label><input type="checkbox" value="fair"> Fair</label>
+            </div>
+            <div class="filter-group">
+                <h3>Exchange Type</h3>
+                <label><input type="checkbox" value="points" checked> Points</label>
+                <label><input type="checkbox" value="swap" checked> Swap</label>
+                <label><input type="checkbox" value="purchase" checked> Purchase</label>
+            </div>
+            <div class="filter-group">
+                <h3>Color</h3>
+                <div class="color-filters">
+                    <span class="color-dot black" data-color="black"></span>
+                    <span class="color-dot white" data-color="white"></span>
+                    <span class="color-dot red" data-color="red"></span>
+                    <span class="color-dot blue" data-color="blue"></span>
+                    <span class="color-dot green" data-color="green"></span>
+                    <span class="color-dot yellow" data-color="yellow"></span>
+                </div>
+            </div>
+            <button class="apply-filters">Apply Filters</button>
+        </aside>
+
+        <!-- Items Grid -->
+        <section class="items-grid">
+            <div class="grid-header">
+                <h1>Browse Items</h1>
+                <div class="sort-filter">
+                    <select id="sortBy">
+                        <option value="newest">Newest First</option>
+                        <option value="points-low">Points: Low to High</option>
+                        <option value="points-high">Points: High to Low</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="items-container">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About ReWear</h3>
+                <p>Sustainable fashion through clothing exchange</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">How It Works</a>
+                <a href="#">FAQs</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ReWear. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="browse.js"></script>
+</body>
+</html>
