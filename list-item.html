@@ -37,14 +37,53 @@
                     <textarea id="description" name="description" required></textarea>
                 </div>
                 <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select gender</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="unisex">Unisex</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="category">Category</label>
                     <select id="category" name="category" required>
                         <option value="">Select a category</option>
-                        <option value="tops">Tops</option>
-                        <option value="bottoms">Bottoms</option>
-                        <option value="dresses">Dresses</option>
-                        <option value="outerwear">Outerwear</option>
+                        <option value="top_wear">Top Wear</option>
+                        <option value="bottom_wear">Bottom Wear</option>
+                        <option value="winter_wear">Winter Wear</option>
+                        <option value="footwear">Footwear</option>
                         <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="subcategory">Subcategory</label>
+                    <select id="subcategory" name="subcategory" required>
+                        <option value="">Select a subcategory</option>
+                        <!-- Top Wear -->
+                        <option value="t_shirts" class="top_wear">T-Shirts</option>
+                        <option value="shirts" class="top_wear">Shirts</option>
+                        <option value="sweaters" class="top_wear">Sweaters</option>
+                        <option value="hoodies" class="top_wear">Hoodies</option>
+                        <!-- Bottom Wear -->
+                        <option value="jeans" class="bottom_wear">Jeans</option>
+                        <option value="trousers" class="bottom_wear">Trousers</option>
+                        <option value="shorts" class="bottom_wear">Shorts</option>
+                        <option value="skirts" class="bottom_wear">Skirts</option>
+                        <!-- Winter Wear -->
+                        <option value="jackets" class="winter_wear">Jackets</option>
+                        <option value="coats" class="winter_wear">Coats</option>
+                        <option value="thermals" class="winter_wear">Thermals</option>
+                        <!-- Footwear -->
+                        <option value="casual_shoes" class="footwear">Casual Shoes</option>
+                        <option value="formal_shoes" class="footwear">Formal Shoes</option>
+                        <option value="sports_shoes" class="footwear">Sports Shoes</option>
+                        <option value="sandals" class="footwear">Sandals</option>
+                        <!-- Accessories -->
+                        <option value="belts" class="accessories">Belts</option>
+                        <option value="watches" class="accessories">Watches</option>
+                        <option value="bags" class="accessories">Bags</option>
+                        <option value="sunglasses" class="accessories">Sunglasses</option>
                     </select>
                 </div>
             </div>
@@ -53,14 +92,20 @@
                 <h2>Item Details</h2>
                 <div class="form-group">
                     <label for="size">Size</label>
-                    <select id="size" name="size" required>
-                        <option value="">Select a size</option>
-                        <option value="xs">XS</option>
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                    </select>
+                    <div id="clothingSize">
+                        <select id="size" name="size" required>
+                            <option value="">Select a size</option>
+                            <option value="xs">XS</option>
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+                    <div id="footwearSize" style="display: none;">
+                        <input type="text" id="footwearSizeInput" name="footwearSize" placeholder="Enter shoe size (e.g., UK 8, US 9, EU 42)" required>
+                        <span class="size-hint">Include size system (UK/US/EU) when entering size</span>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="condition">Condition</label>
@@ -83,24 +128,52 @@
                 <div class="image-upload-container" id="imageUpload">
                     <div class="upload-box">
                         <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Upload Product Images</h3>
                         <p>Drag & drop images here or click to upload</p>
+                        <span class="upload-hint">Recommended: Add at least 3 images from different angles</span>
                         <input type="file" id="imageInput" multiple accept="image/*">
                     </div>
-                    <div class="image-preview" id="imagePreview"></div>
+                    <div class="image-preview" id="imagePreview">
+                        <!-- Preview images will be added here dynamically -->
+                    </div>
                 </div>
             </div>
 
             <div class="form-section">
-                <h2>Exchange Preferences</h2>
+                <h2>Pricing & Exchange Options</h2>
+                <div class="pricing-options">
+                    <div class="form-group">
+                        <label for="priceType">Choose Pricing Type</label>
+                        <div class="price-type-selector">
+                            <label class="price-option">
+                                <input type="radio" name="priceType" value="fixed" checked>
+                                <span class="price-option-label">
+                                    <i class="fas fa-tag"></i>
+                                    Fixed Price
+                                </span>
+                            </label>
+                            <label class="price-option">
+                                <input type="radio" name="priceType" value="negotiable">
+                                <span class="price-option-label">
+                                    <i class="fas fa-handshake"></i>
+                                    Negotiable
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div class="exchange-options">
                     <div class="form-group">
                         <label class="checkbox-label">
                             <input type="checkbox" id="allowPoints" name="allowPoints">
                             <span>Allow points redemption</span>
                         </label>
-                        <div class="points-input" id="pointsInput" style="display: none;">
-                            <label for="pointsValue">Points Value</label>
-                            <input type="number" id="pointsValue" name="pointsValue" min="0">
+                        <div class="points-input" id="pointsInput">
+                            <div class="input-with-icon">
+                                <i class="fas fa-coins"></i>
+                                <input type="number" id="pointsValue" name="pointsValue" min="0" placeholder="Enter points value">
+                            </div>
+                            <span class="input-hint">Set the number of points required to redeem this item</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -108,9 +181,12 @@
                             <input type="checkbox" id="allowPurchase" name="allowPurchase">
                             <span>Allow direct purchase</span>
                         </label>
-                        <div class="price-input" id="priceInput" style="display: none;">
-                            <label for="itemPrice">Price (₹)</label>
-                            <input type="number" id="itemPrice" name="itemPrice" min="0">
+                        <div class="price-input" id="priceInput">
+                            <div class="input-with-icon">
+                                <i class="fas fa-rupee-sign"></i>
+                                <input type="number" id="itemPrice" name="itemPrice" min="0" placeholder="Enter price in ₹">
+                            </div>
+                            <span class="input-hint">Set a fair price for your item</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -118,6 +194,7 @@
                             <input type="checkbox" id="allowSwap" name="allowSwap">
                             <span>Allow direct swap</span>
                         </label>
+                        <span class="input-hint">Enable this to allow other users to propose item swaps</span>
                     </div>
                 </div>
             </div>
