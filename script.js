@@ -1,17 +1,5 @@
 // Check authentication status
-function checkAuth() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (!user) {
-        // Only redirect if not on login, register, or index page
-        const publicPages = ['login.html', 'register.html', 'index.html'];
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        if (!publicPages.includes(currentPage)) {
-            window.location.href = 'login.html';
-            return null;
-        }
-    }
-    return user;
-}
+
 
 // Mobile menu toggle
 function setupMobileMenu() {
