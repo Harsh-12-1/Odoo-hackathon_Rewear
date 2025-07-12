@@ -1,12 +1,5 @@
 // Check authentication status
-function checkAuth() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (!user) {
-        window.location.href = 'login.html';
-        return null;
-    }
-    return user;
-}
+
 
 // Initialize page
 function initializePage() {
