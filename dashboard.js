@@ -1,12 +1,5 @@
 // Check if user is logged in
-function checkAuth() {
-    const user = localStorage.getItem('user');
-    if (!user) {
-        window.location.href = 'login.html';
-        return null;
-    }
-    return JSON.parse(user);
-}
+
 
 // Initialize dashboard
 function initDashboard() {
