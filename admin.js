@@ -6,18 +6,7 @@ const contentSections = document.querySelectorAll('.content-section');
 const logoutBtn = document.getElementById('logoutBtn');
 
 // Check Authentication
-function checkAuth() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (!user) {
-        window.location.href = 'login.html';
-        return null;
-    }
-    if (user.role !== 'admin') {
-        window.location.href = 'dashboard.html';
-        return null;
-    }
-    return user;
-}
+
 
 // Initialize Admin Panel
 function initAdminPanel() {
